@@ -1,12 +1,16 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+// Pages
 import Login from './pages/Login';
+// Components
+import Header from './components/Header';
+
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <h1>Pokeapp <span>con react</span></h1>
+        <Header/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
