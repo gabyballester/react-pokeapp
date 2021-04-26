@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // Pages
 import Login from './pages/Login';
 // Components
-import Header from './components/Header';
-
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route component={Error404} />
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
