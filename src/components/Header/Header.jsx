@@ -26,7 +26,7 @@ export default function Header() {
     console.log(logout);
     return (
       <>
-        <p className="username">{isAuth}</p>
+        <p className="user-data">Bienvenido: <span class="username">{isAuth}</span></p>
         <Button action={logout} title="Logout" cssStyle="flat" />
       </>
     );
