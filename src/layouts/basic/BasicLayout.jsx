@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 // Components
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
@@ -19,12 +19,16 @@ export default function BasicLayout(props) {
 }
 
 function LoadRoutes({ routes }) {
-  return routes.map((route, index) => (
-    <Route
-      key={index}
-      path={route.path}
-      exact={route.exact}
-      component={route.component}
-    />
-  ));
+  return (
+    <Switch>
+      {routes.map((route, index) => (
+        <Route
+          key={index}
+          path={route.path}
+          exact={route.exact}
+          component={route.component}
+        />
+      ))}
+    </Switch>
+  );
 }
