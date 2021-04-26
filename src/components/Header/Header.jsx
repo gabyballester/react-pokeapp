@@ -14,7 +14,11 @@ export default function Header() {
     } else {
       setShowButton(false);
     }
-  }, [isAuth])
+  }, [isAuth]);
+
+  const logout = (e) => {
+    localStorage.removeItem("username");
+  };
 
   return (
     <div className="header">
@@ -23,7 +27,9 @@ export default function Header() {
       </div>
       <div className="right-side">
         <p className="username">ShowUsername</p>
-        {showButton ? <Button title="Logout" cssStyle="flat" /> : null}
+        {showButton ? (
+          <Button action={logout} title="Logout" cssStyle="flat" />
+        ) : null}
       </div>
     </div>
   );

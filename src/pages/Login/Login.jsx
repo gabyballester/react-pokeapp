@@ -16,7 +16,6 @@ export default function Login() {
     username.length > 0
       ? localStorage.setItem("username",username)
       : console.log("incorrecto");
-    <Redirect to="/" />
   };
 
   return (
