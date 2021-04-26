@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     if (username.length > 0) {
       localStorage.setItem("username", username);
-      window.location.href = "/";
+      window.location.href = "/home";
     } else {
       return false;
     }

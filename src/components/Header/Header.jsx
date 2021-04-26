@@ -19,7 +19,7 @@ export default function Header() {
 
   const logout = (e) => {
     localStorage.removeItem("username");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   function UserInfo({ logout }) {
