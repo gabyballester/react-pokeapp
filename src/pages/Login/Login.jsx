@@ -1,7 +1,7 @@
 import { useState } from "react";
-import {Redirect} from 'react-router-dom';
 //components
 import Button from "../../components/BaseButton";
+// styles
 import "./Login.scss";
 
 export default function Login() {
@@ -13,9 +13,12 @@ export default function Login() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    username.length > 0
-      ? localStorage.setItem("username",username)
-      : console.log("incorrecto");
+    if (username.length > 0) {
+      localStorage.setItem("username", username);
+      window.location.href = "/";
+    } else {
+      return false;
+    }
   };
 
   return (

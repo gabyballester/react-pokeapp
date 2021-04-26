@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // components
 import Button from "../BaseButton";
 // styles
@@ -18,18 +19,29 @@ export default function Header() {
 
   const logout = (e) => {
     localStorage.removeItem("username");
+    window.location.href = "/login";
   };
+
+  function UserInfo({ logout }) {
+    console.log(logout);
+    return (
+      <>
+        <p className="username">{isAuth}</p>
+        <Button action={logout} title="Logout" cssStyle="flat" />
+      </>
+    );
+  }
+  
 
   return (
     <div className="header">
       <div className="left-side">
-        <h1>React PokeApp</h1>
+        <Link to="/login">
+          <h1>React PokeApp</h1>
+        </Link>
       </div>
       <div className="right-side">
-        <p className="username">ShowUsername</p>
-        {showButton ? (
-          <Button action={logout} title="Logout" cssStyle="flat" />
-        ) : null}
+        {showButton ? <UserInfo logout={logout} /> : null}
       </div>
     </div>
   );
