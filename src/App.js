@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './config/routes';
 
 function App() {
@@ -17,12 +17,11 @@ function App() {
 }
 
 function RouteWithSubRoutes(route) {
-  console.log(route);
   return (
     <Route
       path={route.path}
       exact={route.exact}
-      render={props => <route.component routes={route.routes} {...props}/>}
+      render={props => <route.component routes={route.routes} {...props} />}
     />
   );
 }
