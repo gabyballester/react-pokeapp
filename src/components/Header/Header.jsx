@@ -1,4 +1,3 @@
-import { useState } from "react";
 // components
 import Button from "../BaseButton";
 // styles
@@ -13,7 +12,7 @@ export default function Header() {
       </div>
       <div className="right-side">
         <p className="username">ShowUsername</p>
-        <Button title="Logout"/>
+        <Button title="Logout" cssStyle="flat"/>
       </div>
     </div>
   );

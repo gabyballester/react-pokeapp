@@ -4,20 +4,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--secondary-color);
-  background-color: var(--brown);
-  color: var(--secondary-color);
-  font-weight: bolder;
   border-radius: 5px;
   min-height: 40px;
   min-width: 126px;
+  font-weight: bolder;
 }
 
-.button-container:hover {
-  background-color: var(--secondary-color);
+.flat {
+  border: 2px solid var(--secondary-color);
   color: var(--brown);
+  background-color: var(--secondary-color)
 }
 
-.button-container:active {
-  filter: drop-shadow(5px 5px 10px #444);
+.flat:hover {
+  color: var(--secondary-color);
+  background-color: var(--brown)
 }
+
+.solid{
+  border: 2px solid var(--brown);
+  background-color: var(--brown);
+  color: var(--secondary-color);
+}
+
+.solid:hover{
+  color: var(--brown);
+  background-color: var(--secondary-color)
+}
+
+// .flat:hover,.solid{
+//   border: 2px solid var(--secondary-color);
+//   background-color: var(--brown);
+//   color: var(--secondary-color);
+//   font-weight: bolder;
+// }
+
+// .flat:hover{
+//   background-color: var(--secondary-color);
+//   color: var(--brown);
+//   border: 2px solid var(--brown);
+// }
