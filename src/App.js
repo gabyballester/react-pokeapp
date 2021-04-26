@@ -1,5 +1,6 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -20,9 +21,7 @@ function Home() {
   return <h2>Vista Home</h2>
 }
 
-function Login() {
-  return <h2>Vista Login</h2>
-}
+
 
 function Error404() {
   return <h2>Error 404</h2>
