@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAllPokemon, getPokemon } from "../../services/api";
+// Components
+import Card from '../../components/Card';
 // styles
 import "./Home.scss";
 
@@ -14,7 +16,6 @@ export default function Home() {
     async function fetchData() {
       // Trae listado de pokemon (nombre y url)
       const { data } = await getAllPokemon(initialUrl);
-      console.log(data.results);
       setNextUrl(data.next);
       setPrevUrl(data.previous);
       await loadingPokemon(data.results)
@@ -34,10 +35,15 @@ export default function Home() {
     setPokemonData(_pokemonData);
   };
 
-    console.log(pokemonData);
   return (
     <div className="home">
-      {loading ? <h1>Loading...</h1> : <h1>Datos recibidos</h1>}
+      {loading ? <h1>Cargando...</h1> : 
+      <div className="grid-container">
+        {pokemonData.map((pokemon, index)=>{
+          return <Card key={index} pokemon={pokemon.data}/>
+        })}
+      </div>
+      }
     </div>
   );
 }

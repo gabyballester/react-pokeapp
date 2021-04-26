@@ -1,0 +1,42 @@
+@import '../../assets/css/variables';
+
+.card {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  height: 248px;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+  height: 60%;
+}
+
+.card-types {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.card-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background: var(--brown);
+  color: var(--secondary-color);
+}
+
+.card-name {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
+}

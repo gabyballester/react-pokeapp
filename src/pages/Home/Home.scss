@@ -1,1 +1,11 @@
 @import '../../assets/css/variables';
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(267px, 294px));
+  grid-gap: 10px;
+}
