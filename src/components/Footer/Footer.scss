@@ -1,0 +1,9 @@
+@import '../../assets/css/variables';
+
+.footer{
+  display:flex;
+  align-items: center;
+  height: 50px;
+  background-color: var(--primary-bg-color);
+  color: var(--secondary-text-color);
+}
