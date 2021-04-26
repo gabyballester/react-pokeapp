@@ -1,0 +1,22 @@
+@import '../../assets/css/variables';
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--brown);
+  color: var(--secondary-color);
+  font-weight: bolder;
+  border-radius: 5px;
+  min-height: 40px;
+  min-width: 126px;
+}
+
+.button-container:hover{
+  background-color: var(--secondary-color);
+  color: var(--brown);  
+}
+
+
+

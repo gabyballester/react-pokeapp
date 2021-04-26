@@ -1,8 +1,15 @@
 :root {
+  //colors
+  --brown: #a52a2a;
+  --primary-color: black;
+  --secondary-color: white;
   // bg-colors
-  --primary-bg-color: #a52a2a;
-  --secondary-gb-color: #575757;
+  --primary-bg-color: var(--brown);
   //text-colors
-  --primary-text-color: black;
-  --secondary-text-color: white;
+  --primary-text-color: var(--primary-color);
+  --secondary-text-color: var(--secondary-color);
+  // padding sections
+  --padding-horizontal: 0 2rem;
 }
+
+// colors
