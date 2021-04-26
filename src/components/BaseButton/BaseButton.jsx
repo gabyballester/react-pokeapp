@@ -7,8 +7,8 @@ export default function Button(props) {
     title = "Default text";
   }
   return (
-    <div onClick={action} className={`button-container ${cssStyle}`}>
+    <button onClick={action} className={`button-container ${cssStyle}`} type="submit">
       <p>{title}</p>
-    </div>
+    </button>
   );
 }

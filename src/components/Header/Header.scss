@@ -22,12 +22,19 @@
     align-items: center;
 
     .user-data {
+      display: flex;
+      flex-direction: row;
       margin-right: 2rem;
       font-size: 1.5rem;
 
       .username {
+        margin-left: 15px;
         font-weight: bold;
       }
+    }
+
+    button {
+      width: 100px !important;
     }
   }
 }
