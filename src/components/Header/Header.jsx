@@ -1,9 +1,20 @@
+import { useState, useEffect } from "react";
 // components
 import Button from "../BaseButton";
 // styles
 import "./Header.scss";
 
 export default function Header() {
+  const [showButton, setShowButton] = useState(false);
+  const isAuth = localStorage.getItem("username");
+
+  useEffect(() => {
+    if (isAuth && isAuth.length > 0) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  }, [isAuth])
 
   return (
     <div className="header">
@@ -12,7 +23,7 @@ export default function Header() {
       </div>
       <div className="right-side">
         <p className="username">ShowUsername</p>
-        <Button title="Logout" cssStyle="flat"/>
+        {showButton ? <Button title="Logout" cssStyle="flat" /> : null}
       </div>
     </div>
   );
