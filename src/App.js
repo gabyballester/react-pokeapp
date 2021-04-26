@@ -1,33 +1,30 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-// Layouts
-import Layout from './layouts/Layout';
-// Pages
-import Login from './pages/Login';
-import Home from './pages/Home';
-// Components
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import routes from './config/routes';
 
 function App() {
   return (
     <Router>
       <div className="app">
-      <Layout/>
-        <Header/>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route component={Error404} />
+          {routes.map((route, index) => (
+            <RouteWithSubRoutes key={index} {...route} />
+          ))}
         </Switch>
-        <Footer/>
       </div>
     </Router>
   );
 }
 
-function Error404() {
-  return <h2>Error 404</h2>
+function RouteWithSubRoutes(route) {
+  console.log(route);
+  return (
+    <Route
+      path={route.path}
+      exact={route.exact}
+      render={props => <route.component routes={route.routes} {...props}/>}
+    />
+  );
 }
 
 export default App;
