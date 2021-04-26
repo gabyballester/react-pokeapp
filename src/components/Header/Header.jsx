@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // components
 import Button from "../BaseButton";
@@ -23,15 +23,15 @@ export default function Header() {
   };
 
   function UserInfo({ logout }) {
-    console.log(logout);
     return (
-      <>
-        <p className="user-data">Bienvenido: <span class="username">{isAuth}</span></p>
+      <Fragment>
+        <p className="user-data">
+          Bienvenido: <span className="username">{isAuth}</span>
+        </p>
         <Button action={logout} title="Logout" cssStyle="flat" />
-      </>
+      </Fragment>
     );
   }
-  
 
   return (
     <div className="header">
