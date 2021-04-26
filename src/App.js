@@ -2,6 +2,7 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // Pages
 import Login from './pages/Login';
+import Home from './pages/Home';
 // Components
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -21,12 +22,6 @@ function App() {
     </Router>
   );
 }
-
-function Home() {
-  return <h2>Vista Home</h2>
-}
-
-
 
 function Error404() {
   return <h2>Error 404</h2>
