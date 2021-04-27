@@ -36,8 +36,8 @@ export default function Header() {
   return (
     <div className="header">
       <div className="left-side">
-        <Link to="/login">
-          <h1>React PokeApp</h1>
+        <Link to="/home">
+          <h1>React PokeApp - Gabriel Ballester</h1>
         </Link>
       </div>
       <div className="right-side">

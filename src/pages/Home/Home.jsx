@@ -38,7 +38,7 @@ export default function Home() {
       ) : (
         <div className="grid-container">
           {pokemonData.map((pokemon, index) => {
-            return <Card key={index} pokemon={pokemon.data} />;
+            return <Card key={index} index={index} pokemon={pokemon.data} />;
           })}
         </div>
       )}
