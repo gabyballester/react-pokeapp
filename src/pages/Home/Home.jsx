@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { getAllPokemon, getPokemon } from "../../services/api";
 // Components
-import Card from '../../components/Card';
+import Card from "../../components/Card";
 // styles
 import "./Home.scss";
 
 export default function Home() {
   const [pokemonData, setPokemonData] = useState([]);
-  const [nextUrl, setNextUrl] = useState("");
-  const [prevUrl, setPrevUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const initialUrl = "https://pokeapi.co/api/v2/pokemon";
 
@@ -16,9 +14,7 @@ export default function Home() {
     async function fetchData() {
       // Trae listado de pokemon (nombre y url)
       const { data } = await getAllPokemon(initialUrl);
-      setNextUrl(data.next);
-      setPrevUrl(data.previous);
-      await loadingPokemon(data.results)
+      await loadingPokemon(data.results);
       setLoading(false);
     }
     fetchData();
@@ -37,13 +33,15 @@ export default function Home() {
 
   return (
     <div className="home">
-      {loading ? <h1>Cargando...</h1> : 
-      <div className="grid-container">
-        {pokemonData.map((pokemon, index)=>{
-          return <Card key={index} pokemon={pokemon.data}/>
-        })}
-      </div>
-      }
+      {loading ? (
+        <h1>Cargando...</h1>
+      ) : (
+        <div className="grid-container">
+          {pokemonData.map((pokemon, index) => {
+            return <Card key={index} pokemon={pokemon.data} />;
+          })}
+        </div>
+      )}
     </div>
   );
 }
