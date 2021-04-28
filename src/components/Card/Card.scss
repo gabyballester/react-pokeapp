@@ -10,24 +10,39 @@
   height: 248px;
 }
 
+.poison {
+  background: #A040A0;
+  border: 2px solid #C183C1
+}
+
 .grass {
-  background-color: #37da37;
+  background: #78C850;
+  border: 1px solid #4E8234;
 }
 
 .fire {
-  background-color: #ff3d3d;
+  background: #F08030;
+  border: 1px solid #9C531F;
+}
+
+.flying {
+  background: #A890F0;
+  border: 1px solid #6D5E9C;
 }
 
 .water {
-  background-color: #3db1ff;
+  background: #6890F0;
+  border: 1px solid #445E9C;
 }
 
 .bug {
-  background-color: #b5ffb5;
+  background: #A8B820;
+  border: 1px solid #6D7815;
 }
 
 .normal {
-  background-color: #b4b4b4;
+  background: #A8A878;
+  border: 1px solid #6D6D4E;
 }
 
 .card-img {
@@ -51,7 +66,6 @@
   padding: 5px 10px;
   margin: 5px;
   border-radius: 5px;
-  background: var(--brown);
   color: var(--secondary-color);
 }
 

@@ -13,7 +13,9 @@ export default function Card({ pokemon, index }) {
         <div className="card-types">
           {pokemon.types.map((type, subIndex) => {
             return (
-              <div key={index + subIndex} className="card-type">
+              <div 
+              key={index + subIndex} 
+              className={`card-type ${type.type.name}`}>
                 {type.type.name}
               </div>
             );

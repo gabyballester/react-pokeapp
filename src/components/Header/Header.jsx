@@ -1,19 +1,13 @@
-import { useState, useEffect } from "react";
 // components
-import MenuFilter from '../MenuFilter';
-import UserInfo from '../UserInfo/'
+import MenuFilter from "../MenuFilter";
+import UserInfo from "../UserInfo/";
 // services
 import { isUserAuth } from "../../services/auth.service";
 // styles
 import "./Header.scss";
 
 export default function Header() {
-  const [showButton, setShowButton] = useState(false);
   const isAuth = isUserAuth();
-
-  useEffect(() => {
-    setShowButton(isAuth);
-  }, [isAuth]);
 
   const logout = (e) => {
     localStorage.removeItem("username");
@@ -25,9 +19,9 @@ export default function Header() {
       <div className="left-side">
         <h3>React PokeApp - Gabriel Ballester</h3>
       </div>
-      <MenuFilter/>
+      <div className="center">{isAuth ? <MenuFilter /> : null}</div>
       <div className="right-side">
-        {showButton ? <UserInfo logout={logout} isAuth={isAuth}/> : null}
+        {isAuth ? <UserInfo logout={logout} isAuth={isAuth} /> : null}
       </div>
     </div>
   );
