@@ -1,0 +1,9 @@
+.user-data {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1rem;
+
+  .username {
+    margin-left: 5px;
+  }
+}
