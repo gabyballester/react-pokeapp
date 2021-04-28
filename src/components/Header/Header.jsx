@@ -1,19 +1,18 @@
 import { Fragment, useState, useEffect } from "react";
 // components
+import MenuFilter from '../MenuFilter';
 import Button from "../BaseButton";
+// services
+import { isUserAuth } from "../../services/auth.service";
 // styles
 import "./Header.scss";
 
 export default function Header() {
   const [showButton, setShowButton] = useState(false);
-  const isAuth = localStorage.getItem("username");
+  const isAuth = isUserAuth();
 
   useEffect(() => {
-    if (isAuth && isAuth.length > 0) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
+    setShowButton(isAuth);
   }, [isAuth]);
 
   const logout = (e) => {
@@ -21,25 +20,27 @@ export default function Header() {
     window.location.href = "/";
   };
 
-  function UserInfo({ logout }) {
-    return (
-      <Fragment>
-        <p className="user-data">
-          Bienvenido: <span className="username">{isAuth}</span>
-        </p>
-        <Button action={logout} title="Logout" cssStyle="flat" />
-      </Fragment>
-    );
-  }
-
   return (
     <div className="header">
       <div className="left-side">
-          <h2>React PokeApp - Gabriel Ballester</h2>
+        <h3>React PokeApp - Gabriel Ballester</h3>
       </div>
+      <MenuFilter/>
       <div className="right-side">
         {showButton ? <UserInfo logout={logout} /> : null}
       </div>
     </div>
   );
+
+  function UserInfo({ logout }) {
+    return (
+      <Fragment>
+        <h4 className="user-data">
+          Bienvenido: <span className="username">{isAuth}</span>
+        </h4>
+        <Button action={logout} title="Logout" cssStyle="flat" />
+      </Fragment>
+    );
+  }
+
 }

@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './config/routes';
-import AuthChecker from './components/AuthChecker';
+import AuthGuard from './components/AuthGuard';
 import './App.scss';
 
 function App() {
   return (
     <Router>
-      <AuthChecker/>
+      <AuthGuard/>
       <div className="app">
         <Switch>
           {routes.map((route, index) => (
