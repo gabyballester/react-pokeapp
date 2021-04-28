@@ -1,8 +1,10 @@
 import "./Card.scss";
 
 export default function Card({ pokemon, index }) {
+  const typeColor = pokemon.types[0].type.name;
+
   return (
-    <div className="card">
+    <div className={`card ${typeColor}`}>
       <div className="card-img">
         <img src={pokemon.sprites.front_default} alt="" />
       </div>
