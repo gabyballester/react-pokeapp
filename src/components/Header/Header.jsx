@@ -1,5 +1,4 @@
 import { Fragment, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 // components
 import Button from "../BaseButton";
 // styles
@@ -36,9 +35,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="left-side">
-        <Link to="/home">
-          <h1>React PokeApp - Gabriel Ballester</h1>
-        </Link>
+          <h2>React PokeApp - Gabriel Ballester</h2>
       </div>
       <div className="right-side">
         {showButton ? <UserInfo logout={logout} /> : null}

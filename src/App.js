@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './config/routes';
+import AuthChecker from './components/AuthChecker';
 import './App.scss';
 
 function App() {
   return (
     <Router>
+      <AuthChecker/>
       <div className="app">
         <Switch>
           {routes.map((route, index) => (
@@ -12,7 +14,7 @@ function App() {
           ))}
         </Switch>
       </div>
-    </Router>
+    </Router>    
   );
 }
 

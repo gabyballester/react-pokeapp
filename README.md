@@ -1,10 +1,11 @@
 # React Pokédex
-#### Desarrolador: Gabriel Ballester
-###
+##### Desarrolador: Gabriel Ballester
+##### Demo en Netlify:
+https://gballester-react-pokeapp.netlify.app/
 ##### Instalar dependencias
 `yarn install`
-###
 ##### Arrancar proyecto
 `yarn start`
 
-Se abrirá en el navegador la url [http://localhost:3000](http://localhost:3000)
+##### Visualizar en producción
+[http://localhost:3000](http://localhost:3000)
