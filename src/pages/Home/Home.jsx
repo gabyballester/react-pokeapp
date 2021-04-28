@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAllPokemon, getPokemon } from "../../services/api";
+import { getDataApi } from "../../services/api";
 // Components
 import Card from "../../components/Card";
 // styles
@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       // Trae listado de pokemon (nombre y url)
-      const { data } = await getAllPokemon(initialUrl);
+      const { data } = await getDataApi(initialUrl);
       await loadingPokemon(data.results);
       setLoading(false);
     }
@@ -24,7 +24,7 @@ export default function Home() {
   const loadingPokemon = async (data) => {
     const _pokemonData = await Promise.all(
       data.map(async (pokemon) => {
-        const pokemonRecord = await getPokemon(pokemon.url);
+        const pokemonRecord = await getDataApi(pokemon.url);
         return pokemonRecord;
       })
     );

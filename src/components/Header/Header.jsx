@@ -1,5 +1,4 @@
 // components
-import MenuFilter from "../MenuFilter";
 import UserInfo from "../UserInfo/";
 // services
 import { isUserAuth } from "../../services/auth.service";
@@ -20,7 +19,6 @@ export default function Header() {
         <h2>React PokeApp</h2>
         <h4>Candidato: Gabriel Ballester</h4>
       </div>
-      <div className="center">{isAuth ? <MenuFilter /> : null}</div>
       <div className="right-side">
         {isAuth ? <UserInfo logout={logout} isAuth={isAuth} /> : null}
       </div>
