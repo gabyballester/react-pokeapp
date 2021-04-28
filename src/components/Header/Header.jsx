@@ -17,7 +17,8 @@ export default function Header() {
   return (
     <div className="header">
       <div className="left-side">
-        <h3>React PokeApp - Gabriel Ballester</h3>
+        <h2>React PokeApp</h2>
+        <h4>Candidato: Gabriel Ballester</h4>
       </div>
       <div className="center">{isAuth ? <MenuFilter /> : null}</div>
       <div className="right-side">

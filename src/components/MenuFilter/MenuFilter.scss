@@ -1,0 +1,41 @@
+@import '../../assets/css/variables';
+
+.filter-container {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+
+  .filter-options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      .badge-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2px 15px 5px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      .areas {
+        border: 2px solid var(--secondary-color);
+      }
+
+      .colors {
+        border: 2px solid var(--secondary-color);
+      }
+
+      .species {
+        border: 2px solid var(--secondary-color);
+      }
+    }
+  }
+}
