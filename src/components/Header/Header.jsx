@@ -1,7 +1,7 @@
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // components
 import MenuFilter from '../MenuFilter';
-import Button from "../BaseButton";
+import UserInfo from '../UserInfo/'
 // services
 import { isUserAuth } from "../../services/auth.service";
 // styles
@@ -27,20 +27,8 @@ export default function Header() {
       </div>
       <MenuFilter/>
       <div className="right-side">
-        {showButton ? <UserInfo logout={logout} /> : null}
+        {showButton ? <UserInfo logout={logout} isAuth={isAuth}/> : null}
       </div>
     </div>
   );
-
-  function UserInfo({ logout }) {
-    return (
-      <Fragment>
-        <h4 className="user-data">
-          Bienvenido: <span className="username">{isAuth}</span>
-        </h4>
-        <Button action={logout} title="Logout" cssStyle="flat" />
-      </Fragment>
-    );
-  }
-
 }

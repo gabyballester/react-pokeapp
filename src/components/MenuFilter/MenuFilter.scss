@@ -1,0 +1,10 @@
+.user-data {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem;
+
+  .username {
+    margin-left: 15px;
+    font-weight: bold;
+  }
+}
